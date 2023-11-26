@@ -10,6 +10,7 @@ import {
 } from "../shared/utils";
 
 import { useInitEditorState } from "../hooks/useInitEditorState";
+import { toast } from "react-toastify";
 
 function MyEditor() {
   const [editorState, setEditorState] = useInitEditorState();
@@ -85,6 +86,7 @@ function MyEditor() {
       "editorContent",
       JSON.stringify(convertToRaw(editorState.getCurrentContent()))
     );
+    toast.success("Your data is saved.");
   };
 
   return (
